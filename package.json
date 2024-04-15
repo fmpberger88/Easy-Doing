@@ -6,9 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest"
   },
   "devDependencies": {
+    "jest-localstorage-mock": "^2.4.26",
     "vite": "^5.2.0"
   },
   "dependencies": {
