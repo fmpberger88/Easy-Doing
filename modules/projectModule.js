@@ -1,3 +1,8 @@
+/**
+ * The projectModule is a module that provides functions for managing projects and todos.
+ *
+ * @namespace projectModule
+ */
 const projectModule = (() => {
     const STORAGE_KEY = 'projectApp.projects';
 

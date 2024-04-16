@@ -1,12 +1,34 @@
+/**
+ * todoModules - A module for managing todo items.
+ *
+ * @module todoModules
+ */
 const todoModules = (() => {
     const STORAGE_KEY = 'todoApp.todo';
 
     let todoList = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
 
+    /**
+     * Saves the todoList to the local storage using the provided key.
+     *
+     * @function saveToLocalStorage
+     * @returns {void}
+     */
     const saveToLocalStorage = () => {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(todoList));
     };
 
+    /**
+     * Add a new todo to the todo list.
+     *
+     * @param {string} title - The title of the todo.
+     * @param {string} description - The description of the todo.
+     * @param {string} dueDate - The due date of the todo.
+     * @param {string} priority - The priority of the todo.
+     * @param {string} notes - Any additional notes for the todo.
+     * @param {Array} checklist - An array representing the checklist items for the todo.
+     * @returns {void}
+     */
     const addTodo = (title, description, dueDate, priority, notes, checklist) => {
         const todo = {
             id: Date.now(),
