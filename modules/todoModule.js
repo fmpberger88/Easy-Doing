@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import todoList from "jsdom/lib/jsdom/living/traversal/helpers.js";
 /**
  * todoModules - A module for managing todo items.
  *
@@ -37,7 +38,9 @@ const todoModules = (() => {
         return todo;
     };
 
-    const getTodos = () => todoList;
+    const getTodos = (id) => {
+        return todoList.filter(todo => todo.projectId === id);
+    };
 
     const getTodo = (id) => {
         return todoList.find(todo => todo.id === id)
