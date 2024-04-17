@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid'
+
 /**
  * The projectModule is a module that provides functions for managing projects and todos.
  *
@@ -14,24 +16,31 @@ const projectModule = (() => {
 
     const addProject = (title) => {
         const project = {
-            id: Date.now(),
+            id: uuidv4(),
             title: title,
             todos: []
         }
 
         projects.push(project);
         saveToLocalStorage();
+
+        return project;
     }
 
     const getProjects = () => projects;
 
-    const addTodoToProject = (projectId, todo) => {
-        const index = projects.findIndex(project => project.id === projectId);
-
-        if (index !== -1) {
-            projects[index].todos.push(todo);
+    const addTodoToProject = (projectId, todoId) => {
+        const projectIndex = projects.findIndex(project => project.id === projectId);
+        if (projectIndex !== -1) {
+            projects[projectIndex].todos.push(todoId);
             saveToLocalStorage();
         }
+    }
+
+
+    const getTodos = (projectId) => {
+        const project = projects.find(project => project.id === projectId);
+        return project ? project.todos : [];
     }
 
     const deleteProjects = (projectId) => {
