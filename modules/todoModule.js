@@ -39,6 +39,10 @@ const todoModules = (() => {
 
     const getTodos = () => todoList;
 
+    const getTodo = (id) => {
+        return todoList.find(todo => todo.id === id)
+    }
+
     const completeTodo = (id) => {
         const index = todoList.findIndex(todo => todo.id === id);
         if (index !== -1) {
@@ -58,6 +62,7 @@ const todoModules = (() => {
     return {
         addTodo,
         getTodos,
+        getTodo,
         completeTodo,
         deleteTodo,
     };

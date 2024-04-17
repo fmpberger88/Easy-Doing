@@ -34,6 +34,8 @@ const projectModule = (() => {
         if (projectIndex !== -1) {
             projects[projectIndex].todos.push(todoId);
             saveToLocalStorage();
+        } else {
+            throw new Error('Project not found.');
         }
     }
 
@@ -49,12 +51,15 @@ const projectModule = (() => {
         if (index !== -1) {
             projects.splice(index, 1);
             saveToLocalStorage();
+        } else {
+            throw new Error("Project not found.");
         }
     }
 
     return {
         addProject,
         getProjects,
+        getTodos,
         addTodoToProject,
         deleteProjects
     }
