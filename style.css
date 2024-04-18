@@ -114,6 +114,8 @@ aside div {
   margin-left: 30px;
 }
 
+/* Styling for main section - todos card etc */
+
 .projectCards {
   display: flex;
   flex-direction: column;
@@ -129,4 +131,48 @@ aside div {
   border-radius: 5px;
   cursor: pointer;
   text-align: center;
+}
+.toDosContainer {
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.todo-card {
+  display: flex;
+  gap: 20px;
+  padding: 20px 10px;
+  border-radius: 10px;
+  border: 2px solid #ffc300;
+  width: 100%;
+}
+
+/* Style for buttons in todo cards */
+.todo-card .complete-btn, .todo-card .delete-btn {
+  padding: 4px 0;
+  color: black;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.6s;
+}
+
+.todo-card .complete-btn {
+  padding: 4px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.todo-card .delete-btn {
+  background-color: white;
+  border-radius: 50%;
+  width: 35px;
+  text-align: center;
+  border: 2px solid red;
+}
+
+.todo-card .complete-btn:hover, .todo-card .delete-btn:hover {
+  opacity: 0.8;
 }
