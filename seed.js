@@ -19,6 +19,11 @@ export function seedProjects() {
 
 function seedTodos(projectId, todoTitles) {
     todoTitles.forEach((title, index) => {
+        // Assign different statuses based on index for demonstration
+        let status = 'todo';
+        if (index === 1) status = 'ongoing';
+        else if (index === 2) status = 'done';
+
         const createdTodo = todoModule.addTodo(
             title,
             `Test description for ${title}`,
@@ -26,7 +31,8 @@ function seedTodos(projectId, todoTitles) {
             'High',
             '',
             [],
-            projectId
+            projectId,
+            status  // Add the status here
         );
 
         // Now, add the todo ID to the project
