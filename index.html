@@ -34,15 +34,24 @@
         </div>
     </div>
   </header>
-
+  <!-- Main elemente for kanban-board -->
   <main>
-    <div>
-      <div class="toDosContainer">
-        <div class="toDoCard">
-        </div>
+    <div class="kanban-board">
+      <div class="kanban-column todo">
+        <h2>Todo</h2>
+        <div class="kanban-tasks" data-status="todo" id="todo-tasks"></div>
+      </div>
+      <div class="kanban-column ongoing">
+        <h2>Ongoing</h2>
+        <div class="kanban-tasks" data-status="ongoing" id="ongoing-tasks"></div>
+      </div>
+      <div class="kanban-column done">
+        <h2>Done</h2>
+        <div class="kanban-tasks" data-status="done" id="done-tasks"></div>
       </div>
     </div>
   </main>
+
     <aside>
       <div class="projectCards">
         <h1>Projects</h1>
