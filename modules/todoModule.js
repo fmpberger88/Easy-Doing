@@ -30,7 +30,7 @@ const todoModules = (() => {
             notes,
             checklist,
             projectId,
-            completed: false
+            status: 'todo'
         };
         todoList.push(todo);
         saveToLocalStorage();
@@ -46,13 +46,25 @@ const todoModules = (() => {
         return todoList.find(todo => todo.id === id)
     }
 
+    /*
+    --> old version
     const completeTodo = (id) => {
         const index = todoList.findIndex(todo => todo.id === id);
         if (index !== -1) {
             todoList[index].completed = true;
             saveToLocalStorage();
         }
-    };
+     */
+
+    const updateTodoStatus = (id, newStatus) => {
+        const index = todoList.findIndex(todo => todo.id === id);
+        if (index !== -1) {
+            todoList[index].status = newStatus;
+            saveToLocalStorage();
+        } else {
+            throw new Error ('Todo not found');
+        }
+    }
 
     const deleteTodo = (id) => {
         const index = todoList.findIndex(todo => todo.id === id);
@@ -66,7 +78,7 @@ const todoModules = (() => {
         addTodo,
         getTodos,
         getTodo,
-        completeTodo,
+        updateTodoStatus,
         deleteTodo,
     };
 })();
