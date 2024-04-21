@@ -116,6 +116,7 @@ aside div {
 
 /* Styling for main section - todos card etc */
 
+
 .projectCards {
   display: flex;
   flex-direction: column;
@@ -149,7 +150,11 @@ aside div {
   width: 100%;
 }
 
+
+
 /* Style for buttons in todo cards */
+
+/*
 .todo-card .complete-btn, .todo-card .delete-btn {
   padding: 4px 0;
   color: black;
@@ -176,3 +181,45 @@ aside div {
 .todo-card .complete-btn:hover, .todo-card .delete-btn:hover {
   opacity: 0.8;
 }
+
+
+ */
+
+.kanban-board {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.kanban-column {
+  width: 30%;
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.kanban-tasks {
+  min-height: 150px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  overflow: auto;
+}
+
+
+
+.draggable {
+  margin-bottom: 30px;
+  cursor: move; /* Visually indicates that the element can be dragged */
+  pointer-events: auto; /* Ensures that the element can trigger pointer events */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.draggable:hover {
+  transition: background-color 0.5s;
+  background-color: #ffc300;
+  padding: 10px;
+}
+
+
