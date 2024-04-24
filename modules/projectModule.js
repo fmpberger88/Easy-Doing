@@ -27,6 +27,17 @@ const projectModule = (() => {
         return project;
     }
 
+    const updateProject = (id, title) => {
+        const projectIndex = projects.findIndex(project => project.id === id);
+        if (projectIndex !== -1) {
+            projects[projectIndex].title = title;
+            saveToLocalStorage();
+        } else {
+            throw new Error("Project not found.");
+        }
+        return projects[projectIndex];
+    }
+
     const getProjects = () => projects;
 
     const addTodoToProject = (projectId, todoId) => {
@@ -58,6 +69,7 @@ const projectModule = (() => {
 
     return {
         addProject,
+        updateProject,
         getProjects,
         getTodos,
         addTodoToProject,
