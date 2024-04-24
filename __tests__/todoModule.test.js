@@ -17,7 +17,7 @@ describe('todoModule', () => {
         expect(todo.priority).toBe('high');
         expect(todo.notes).toBe('Remember to buy organic milk');
         expect(todo.checklist).toEqual(['Milk', 'Eggs', 'Bread']);
-        expect(todo.completed).toBe(false);
+        expect(todo.status).toEqual('todo');
     })
 
     it('should be able to add a second todo', () => {
@@ -31,7 +31,7 @@ describe('todoModule', () => {
         expect(todo2.priority).toBe('medium');
         expect(todo2.notes).toBe('Start with the living room');
         expect(todo2.checklist).toEqual(['Vacuum', 'Dust', 'Mop']);
-        expect(todo2.completed).toBe(false);
+        expect(todo2.status).toEqual('todo');
     })
 
     it('should be able to add a third todo', () => {
@@ -45,14 +45,15 @@ describe('todoModule', () => {
         expect(todo3.priority).toBe('low');
         expect(todo3.notes).toBe('Remember to stretch before and after');
         expect(todo3.checklist).toEqual([]);
-        expect(todo3.completed).toBe(false);
+        expect(todo3.status).toEqual('todo');
+
     })
 
     it('should complete the second todo', () => {
         const todoList = todoModule.getTodos();
         const todo2 = todoList[1];
-        todoModule.completeTodo(todo2.id);
-        expect(todo2.completed).toBe(true);
+        todoModule.updateTodoStatus(todo2.id, 'done');
+        expect(todo2.status).toBe('done');
     })
 
     it('should delete the first todo', () => {

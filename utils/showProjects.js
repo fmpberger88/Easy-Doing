@@ -1,4 +1,5 @@
 import projectModule from "../modules/projectModule.js";
+import updateProject from "./updateProject.js";
 
 const showProjects = (document) => {
     // get all projects
@@ -12,6 +13,31 @@ const showProjects = (document) => {
         // Set data attribute for identification
         projectElement.dataset.projectId = project.id;
         projectList.appendChild(projectElement);
+
+        // Create Div for buttons
+        const buttonDiv = document.createElement("div");
+        buttonDiv.classList.add("buttonDiv");
+        projectElement.appendChild(buttonDiv);
+
+        // Add delete Button
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.classList.add("deleteProject");
+        deleteButton.addEventListener("click", () => {
+            projectModule.deleteProjects(project.id);
+            showProjects(document);
+        });
+        buttonDiv.appendChild(deleteButton);
+
+        // Update Button
+        const updateButton = document.createElement("button");
+        updateButton.textContent = 'Update';
+        updateButton.classList.add("updateProject");
+        updateButton.addEventListener("click", () => {
+            // Call a function to handle the update logic
+            updateProject(project.id, document);
+        });
+        buttonDiv.appendChild(updateButton);
     });
 }
 
