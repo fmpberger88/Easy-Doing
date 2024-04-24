@@ -27,13 +27,51 @@
         <div class="userContainer">
           <div class="buttonContainer">
             <button class="btnProject newProjectButton">New Project</button>
-            <button class="btnProject">Delete Project</button>
+            <button class="btnProject">New Todo</button>
           </div>
         </div>
     </div>
   </header>
   <!-- Main elemente for kanban-board -->
   <main>
+    <!-- Modal for adding Project -->
+    <div id="newProjectModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="newProjectForm">
+          <label for="projectTitle">Project Title:</label>
+          <input type="text" id="projectTitle" name="projectTitle" required>
+          <button type="submit">Create Project</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal for adding Todo -->
+    <div id="newTodoModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="newTodoForm">
+          <label for="todoTitle">Todo Title:</label>
+          <input type="text" id="todoTitle" name="todoTitle" required>
+          <label for="todoDescription">Description</label>
+          <textarea id="todoDescription" name="todoDescription" required></textarea>
+          <label for="todoDueDate">Due Date:</label>
+          <input type="date" id="todoDueDate" name="todoDueDate" required>
+          <label for="todoPriority">Priority:</label>
+          <select id="todoPriority" name="todoPriority" required>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+          <label for="todoNotes"></label>
+          <textarea id="todoNotes" name="todoNotes"></textarea>
+          <label for="todoChecklist">Checklist: </label>
+          <textarea id="todoChecklist" name="todoChecklist"></textarea>
+          <button type="submit">Create Todo</button>
+        </form>
+      </div>
+    </div>
+
     <div class="kanban-board">
       <div class="kanban-column todo">
         <h2>Todo</h2>
