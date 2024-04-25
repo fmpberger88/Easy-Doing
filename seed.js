@@ -29,8 +29,6 @@ function seedTodos(projectId, todoTitles) {
             `Test description for ${title}`,
             `2022-01-0${index + 1}`,
             'High',
-            '',
-            [],
             projectId,
             status  // Add the status here
         );

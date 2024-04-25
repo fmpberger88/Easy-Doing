@@ -1,5 +1,4 @@
 import { v4 as uuidv4 } from 'uuid';
-import todoList from "jsdom/lib/jsdom/living/traversal/helpers.js";
 /**
  * todoModules - A module for managing todo items.
  *
@@ -20,15 +19,13 @@ const todoModules = (() => {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(todoList));
     };
 
-    const addTodo = (title, description, dueDate, priority, notes, checklist, projectId) => {
+    const addTodo = (title, description, dueDate, priority, projectId) => {
         const todo = {
             id: uuidv4(),
             title,
             description,
             dueDate,
             priority,
-            notes,
-            checklist,
             projectId,
             status: 'todo'
         };
@@ -45,16 +42,6 @@ const todoModules = (() => {
     const getTodo = (id) => {
         return todoList.find(todo => todo.id === id)
     }
-
-    /*
-    --> old version
-    const completeTodo = (id) => {
-        const index = todoList.findIndex(todo => todo.id === id);
-        if (index !== -1) {
-            todoList[index].completed = true;
-            saveToLocalStorage();
-        }
-     */
 
     const updateTodoStatus = (id, newStatus) => {
         const index = todoList.findIndex(todo => todo.id === id);

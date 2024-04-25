@@ -31,13 +31,11 @@ const createTodo = (document) => {
         const description = document.querySelector("#todoDescription").value.trim();
         const dueDate = document.querySelector("#todoDueDate").value;
         const priority = document.querySelector("#todoPriority").value;
-        const notes = document.querySelector("#todoNotes").value;
-        const checklist = document.querySelector("#todoChecklist").value;
         const projectId = document.querySelector("#todoProjectId").value;
 
         // Add todo through todoModules
         const newTodo = todoModules.addTodo(
-            title, description, dueDate, priority, notes, checklist, projectId
+            title, description, dueDate, priority, projectId
         );
         projectModule.addTodoToProject(projectId, newTodo.id);
 
