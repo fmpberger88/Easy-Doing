@@ -217,6 +217,10 @@ aside div {
 
 
 .draggable {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
   margin-bottom: 30px;
   cursor: move; /* Visually indicates that the element can be dragged */
   pointer-events: auto; /* Ensures that the element can trigger pointer events */
@@ -228,6 +232,18 @@ aside div {
   transition: background-color 0.5s;
   background-color: #ffc300;
   padding: 10px;
+}
+
+.deleteTodo {
+  background: indianred;
+  border: none;
+  border-radius: 5px;
+  width: 20%;
+  align-self:flex-end;
+}
+
+.todoTitle {
+  border-bottom: 1px dashed #ffc300;
 }
 
 

@@ -17,6 +17,7 @@ const showTodos = (projectId, document) => {
 
         // Use createElement and textContent instead of innerHTML
         const title = document.createElement("h3");
+        title.classList.add("todoTitle");
         title.textContent = todo.title;
 
         const description = document.createElement("p");
@@ -31,12 +32,18 @@ const showTodos = (projectId, document) => {
         const notes = document.createElement("p");
         notes.textContent = todo.notes;
 
+        // Delete Button
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "X";
+        deleteButton.classList.add("deleteTodo");
+        deleteButton.addEventListener("click", () => {
+            todoModule.deleteTodo(todo.id);
+            showTodos(projectId, document);
+        });
+
         // Append all child elements to todoCard
-        todoCard.appendChild(title);
-        todoCard.appendChild(description);
-        todoCard.appendChild(dueDate);
-        todoCard.appendChild(priority);
-        todoCard.appendChild(notes);
+        todoCard.append(deleteButton, title, description, dueDate, priority, notes);
+
 
         // Find the container based on the status and append the todoCard
         const container = document.getElementById(`${todo.status}-tasks`);

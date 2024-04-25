@@ -27,7 +27,7 @@
         <div class="userContainer">
           <div class="buttonContainer">
             <button class="btnProject newProjectButton">New Project</button>
-            <button class="btnProject">New Todo</button>
+            <button class="btnProject newTodoButton">New Todo</button>
           </div>
         </div>
     </div>
@@ -49,8 +49,11 @@
     <!-- Modal for adding Todo -->
     <div id="newTodoModal" class="modal">
       <div class="modal-content">
-        <span class="close">&times;</span>
+        <span class="closeTodoModal">&times;</span>
         <form id="newTodoForm">
+          <label for="todoProjectId">Project: </label>
+          <select id="todoProjectId" name="todoProjectId" required>
+          </select>
           <label for="todoTitle">Todo Title:</label>
           <input type="text" id="todoTitle" name="todoTitle" required>
           <label for="todoDescription">Description</label>

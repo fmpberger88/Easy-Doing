@@ -4,6 +4,7 @@ import todoModule from "./modules/todoModule.js";
 import showProjects from "./utils/showProjects.js";
 import showTodos from "./utils/showToDos.js";
 import createProject from "./utils/createProject.js";
+import createTodo from "./utils/createTodo.js";
 
 export function initializeDragAndDrop() {
     const columns = document.querySelectorAll('.kanban-tasks');
@@ -53,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     showProjects(document);
     createProject(document);
+    createTodo(document);
 
     const projectList = document.querySelector('#project-list');
     projectList.addEventListener('click', (event) => {
