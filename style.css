@@ -226,6 +226,7 @@ aside div {
   pointer-events: auto; /* Ensures that the element can trigger pointer events */
   padding: 10px;
   border-radius: 5px;
+  border: 2px solid #003566;
 }
 
 .draggable:hover {
@@ -269,17 +270,16 @@ aside div {
   padding: 20px;
   border: 1px solid #888;
   width: 400px;
-  height: 300px;
 }
 
-#newProjectForm {
+#newProjectForm, #newTodoForm {
   display: flex;
   flex-direction: column;
   gap: 20px;
   font-weight: bold;
 }
 
-#newProjectForm button {
+#newProjectForm button, #newTodoForm button {
   background: #ffc300;
   padding: 10px;
   border: none;
@@ -289,14 +289,14 @@ aside div {
   cursor: pointer;
 }
 
-#newProjectForm input {
+#newProjectForm input, #newTodoForm input {
   padding: 10px;
   color: black;
   font-weight: bold;
   border-radius: 5px;
 }
 
-.close {
+.close, .closeTodoModal {
   color: #aaaaaa;
   align-self: flex-end;
   font-size: 28px;
@@ -304,7 +304,9 @@ aside div {
 }
 
 .close:hover,
-.close:focus {
+.close:focus,
+.closeTodoModal:hover,
+.closeTodoModal:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
