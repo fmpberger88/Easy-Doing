@@ -24,38 +24,23 @@ header {
   background-color: #003566;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  padding: 20px 30px;
+  gap: 20px;
 }
 
-.headerSection {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 30px;
-  gap: 20px;
-  margin: 20px
-}
 
 .userContainer {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 40px;
-}
-
-#search {
-  border: none;
-  border-radius: 20px;
-  background-color: lightgray;
-  padding: 5px;
-  min-width: 500px;
+  align-self: flex-end;
 }
 
 .buttonContainer {
   display: flex;
   gap: 20px;
   margin-bottom: 20px;
-  margin-left: 40px
+  align-self: flex-start;
 }
 
 
@@ -119,7 +104,7 @@ aside div {
 .projectCards {
   display: flex;
   flex-direction: column;
-  margin-top: 250px;
+  margin-top: 50px;
 }
 
 #project-list > * {
@@ -152,7 +137,7 @@ aside div {
   cursor: pointer;
   font-size: 0.9rem;
   align-self: flex-end;
-  width: 100%
+  padding: 5px;
 }
 
 .deleteProject:hover {
@@ -207,7 +192,7 @@ aside div {
 }
 
 .kanban-tasks {
-  min-height: 150px;
+  min-height: 1200px;
   background-color: #fff;
   border-radius: 5px;
   padding: 10px;
@@ -311,5 +296,50 @@ aside div {
   text-decoration: none;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 1000px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header {
+    width: 100%;
+  }
+
+
+  main {
+    width: 100%;
+  }
+
+  aside {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}
+
+/* CSS-Datei */
+.priority-high { color: red; }
+.priority-medium { color: orange; }
+.priority-low { color: green; }
+
+#selectedProject {
+  font-size: 1.8rem;
+  align-self: center;
+  color: white;
+  font-weight: bold;
+  margin-right: 200px;
+}
+
+.newProjectButton {
+  margin-top: 110px;
+  width: 80%;
+  align-self: center;
+}
+
 
 

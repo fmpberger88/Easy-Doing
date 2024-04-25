@@ -1,6 +1,7 @@
 import todoModule from "../modules/todoModule.js";
 import projectModule from "../modules/projectModule.js";
 import clearTodos from "./helper/clearTodos.js";
+import assignPriorityColor from "./helper/assignPriorityColor.js";
 
 
 const showTodos = (projectId, document) => {
@@ -28,6 +29,7 @@ const showTodos = (projectId, document) => {
 
         const priority = document.createElement("p");
         priority.textContent = `Priority: ${todo.priority}`;
+        assignPriorityColor(priority, todo.priority)
 
         // Delete Button
         const deleteButton = document.createElement("button");

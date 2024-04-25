@@ -1,5 +1,6 @@
 import projectModule from "../modules/projectModule.js";
 import updateProject from "./updateProject.js";
+import todoModule from "../modules/todoModule.js";
 
 const showProjects = (document) => {
     // get all projects
@@ -21,7 +22,7 @@ const showProjects = (document) => {
 
         // Add delete Button
         const deleteButton = document.createElement("button");
-        deleteButton.textContent = "Delete";
+        deleteButton.textContent = "X";
         deleteButton.classList.add("deleteProject");
         deleteButton.addEventListener("click", () => {
             projectModule.deleteProjects(project.id);
@@ -30,6 +31,7 @@ const showProjects = (document) => {
         buttonDiv.appendChild(deleteButton);
 
         // Update Button
+        /*
         const updateButton = document.createElement("button");
         updateButton.textContent = 'Update';
         updateButton.classList.add("updateProject");
@@ -38,6 +40,8 @@ const showProjects = (document) => {
             updateProject(project.id, document);
         });
         buttonDiv.appendChild(updateButton);
+
+         */
     });
 }
 
